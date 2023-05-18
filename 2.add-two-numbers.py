@@ -15,35 +15,35 @@ from typing import Optional
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        # n1 = int(''.join([str(x) for x in l1])) + int(''.join([str(x) for x in l2]))
-        # return [int(c) for c in str(n1)][::-1]
-        t = l1.val + l2.val
-        curr1 = l1.next
-        curr2 = l2.next
-        rem = 0
-        prev = ListNode(val=t, next=None)        
+        n1, val1 = None, []
+        n2, val2 = None, []
+        if l1 and l2:
+            n1, val1 = l1, [l1.val]
+            n2, val2 = l2, [l2.val]
+        else: # handle edge case bullshit
+            pass 
+        while n1.next:
+            val1.append(n1.next.val)
+            n1 = n1.next
+        while n2.next:
+            val2.append(n2.next.val)
+            n2 = n2.next
+        
+        
+        print(int(''.join(map(str, val1))[::-1]))
+        print(int(''.join(map(str, val2))[::-1]))
+        fnum = int(''.join(map(str, val1))[::-1]) + int(''.join(map(str, val2))[::-1])
+        sver = [int(char) for char in str(fnum)]
 
-        while curr1 or curr2:
-            if curr1.next is None:
-                t = curr2.val
-                curr2 = curr2.next
-            elif curr2.next is None:
-                t = curr2.val
-                curr1 = curr1.next
-            else:
-                s = curr1.val + curr2.val + rem # absorb the remainder
-                rem = 0
-                if s > 9:
-                    t = s % 10
-                    rem += 1
-                else:
-                    t = s
-                # print(curr1.val, curr2.val, rem, s)
-            # here use t to make the list ting
-            temp = ListNode(val=t, next=None)
-            prev.next = temp
-            prev = temp
-        return prev
+        prev = ListNode(val=sver[-1].val, next=None)        
+        for i in range(1, len(sver)-1):
+            curr = ListNode(val=sver[i].val, next=prev)
+
+        print(val1)
+        print(val2)
+
+
+
 
 
 # if __name__ == '__main__': 

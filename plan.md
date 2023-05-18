@@ -14,3 +14,14 @@
 
 # cool tools
 - autoviz
+
+# cool data sources
+- import fredapi # Federal Reserve Economic Data | FRED | St. Louis Fed
+
+# cool financial tools
+- alpha vantage - stock market dat apis
+    key; 1UOFIH23W3IL1R6W
+    5 req / min + 500 req / day
+- fredapi; Federal Reserve Economic Data - St. Louis Federal Reserve
+
+
