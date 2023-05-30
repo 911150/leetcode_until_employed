@@ -24,4 +24,8 @@
     5 req / min + 500 req / day
 - fredapi; Federal Reserve Economic Data - St. Louis Federal Reserve
 
+# books to read 
+[ ] stochastic modelling; https://www.worldscientific.com/worldscibooks/10.1142/5217#t=aboutBook
+[ ] machine learning for trading; https://www.worldscientific.com/worldscibooks/10.1142/5217#t=aboutBook
+
 
