@@ -5,8 +5,8 @@
 #
 
 # @lc code=start
-from typing import List
-import itertools
+# from typing import List
+# import itertools
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         # backtracking approach with dfs
@@ -22,14 +22,16 @@ class Solution:
             res.append(path)
             return
         for i in range(index, len(nums)):
+            # print(nums, target-nums[i], i, path + [nums[i]], res)
             self.dfs(nums, target-nums[i], i, path + [nums[i]], res)
 
 
-if __name__ == '__main__':
-    s = Solution()
-    print(s.combinationSum(candidates = [2,3,6,7], target = 7))
+# if __name__ == '__main__':
+#     s = Solution()
+#     print('nums', 'target', 'index', 'path', 'res')
+#     print(s.combinationSum(candidates = [2,3,6,7], target = 7))
 
-    pass
+#     pass
 
         
 # @lc code=end
